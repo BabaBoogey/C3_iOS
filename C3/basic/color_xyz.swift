@@ -55,25 +55,24 @@ class XYZ {
     init(px:Float32=0,py:Float32=0,pz:Float32=0) {
         x=px;y=py;z=pz;
     }
-    init(a:Float32) {
-        x=a;y=a;z=a;
+    convenience init(a:Float32) {
+        self.init(px:a,py:a,pz:a)
     }
-    init(c:RGB8) {
-        x=Float32(c.r);y=Float32(c.g);z=Float32(c.b);
+    convenience init(c:RGB8) {
+        self.init(px:Float32(c.r),py:Float32(c.g),pz:Float32(c.b))
     }
-    init(c:RGB16i) {
-        x=Float32(c.r);y=Float32(c.g);z=Float32(c.b);
+    convenience init(c:RGB16i) {
+        self.init(px:Float32(c.r),py:Float32(c.g),pz:Float32(c.b))
     }
-    init(c:RGB32i) {
-        x=Float32(c.r);y=Float32(c.g);z=Float32(c.b);
+    convenience init(c:RGB32i) {
+        self.init(px:Float32(c.r),py:Float32(c.g),pz:Float32(c.b))
     }
-    init(c:RGB32f) {
-        x=Float32(c.r);y=Float32(c.g);z=Float32(c.b);
+    convenience init(c:RGB32f) {
+        self.init(px:Float32(c.r),py:Float32(c.g),pz:Float32(c.b))
     }
     
     static func norm(a:XYZ)->Float32{
         return Float32(sqrt(a.x*a.x+a.y*a.y+a.z*a.z))
-        
     }
     
     static func normalize(a:XYZ)->XYZ{
